@@ -19,7 +19,7 @@ pipeline {
         }
          stage('Parametreler Test') {
             steps {
-                echo %ParametreDeneme1%
+                echo $ParametreDeneme1$
             }
         }
     }
