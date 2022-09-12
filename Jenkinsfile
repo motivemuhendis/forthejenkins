@@ -17,10 +17,5 @@ pipeline {
                 echo 'Deploying....'
             }
         }
-         stage('Parametreler Test') {
-            steps {
-                echo $ParametreDeneme1$
-            }
-        }
     }
 }
