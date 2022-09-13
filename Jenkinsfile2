@@ -1,7 +1,7 @@
 properties([parameters([choice(choices: ['main', 'tank', 'test'], description: 'Select branch to build', name: 'Branch')])])
 node {
     stage('Scm Checkout'){
-        echo "Pulling changes from the branch ${params.Branch}"
+        echo "Seçilen branch: ${params.Branch}"
         git url: 'https://github.com/motivemuhendis/forthejenkins', branch: "${params.Branch}"
     }
 }
