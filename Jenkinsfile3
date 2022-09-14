@@ -2,7 +2,7 @@ properties([parameters([choice(choices: ['main', 'tank', 'test'], description: '
 node {
     stage('Scm Checkout'){
         echo "Secilen branch: ${params.Branch}"
-echo "git branch: "${params.Branch}""
+
 
     git branch: "${params.Branch}",
     credentialsId: '63a8c792-57d0-4801-89db-5d0fd779f988',
