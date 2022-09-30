@@ -1,0 +1,22 @@
+ pipeline {
+    agent any
+    
+ stage('Build Branch') {
+            steps {
+                script {
+                        properties([parameters([choice(choices: ['main', 'tank', 'test'], description: 'Select branch to build', name: 'Branch')])])
+                        echo "Secilen branch: ${params.Branch}"
+                        echo "branchName : ${params.Branch}"
+                }
+            }
+            steps {
+                script {
+                        git branch: ${params.Branch},
+                             credentialsId: '63a8c792-57d0-4801-89db-5d0fd779f988',
+                             url: 'git@github.com:motivemuhendis/forthejenkins.git'
+                    }
+                }
+            }
+          }
+
+ 
